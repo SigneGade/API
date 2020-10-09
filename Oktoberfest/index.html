@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=David+Libre&family=Kelly+Slab&family=New+Rocker&family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+
+
+    <!--Open weather API start -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--Open weather API slut -->
+
+    <!-- mapbox start-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <!-- mapbox slut-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="parallax"></div>
+
+    <div style="height:1500px;background-color:#cdbc86;font-size:36px"> 
+   
+    <title>Oktoberfest</title>
+    <div id="indhold">
+        <section id="section1">
+            <h1>Oktoberfest</h1>
+            <h3>Kom til oktoberfest i Aarhus på Heidis Bier Bar</h3>
+            <p>Find dit allerbedste kostume og det gode humør frem.</p>
+            <p>D. 10 oktober 2020 fra kl. 17.00 til den lyse morgen.</p>
+            <p>Der vil være GRATIS kolde fadøl ude foran den første time.</p>
+            <p>Så hold øje med vejrudsigten nedenfor, og tag tøj på efter vejret, så du kan få GRATIS fadøl.</p>
+            <!-- Open weather -->
+            <div id="result"></div>
+        </section>
+
+        <section id="section2">
+            <form id="regForm" action="/action_page.php">
+                <h1>Tilmeld oktoberfest</h1>
+                <!-- One "tab" for each step in the form: -->
+                <div class="tab">Navn:
+                    <p><input placeholder="Fornavn..." oninput="this.className = ''" name="fname"></p>
+                    <p><input placeholder="Efternavn..." oninput="this.className = ''" name="lname"></p>
+                </div>
+                <div class="tab">Kontakt:
+                    <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+                    <p><input placeholder="Telefon nr..." oninput="this.className = ''" name="phone"></p>
+                </div>
+                <div class="tab">Fødselsdag:
+                    <p><input placeholder="dato" oninput="this.className = ''" name="dd"></p>
+                    <p><input placeholder="måned" oninput="this.className = ''" name="nn"></p>
+                    <p><input placeholder="år" oninput="this.className = ''" name="yyyy"></p>
+                </div>
+                <div style="overflow:auto;">
+                    <div style="float:right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Næste</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Tilbage</button>
+                    </div>
+                </div>
+                <!-- Circles which indicates the steps of the form: -->
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
+            </form>
+        </section>
+
+
+    </div>
+
+    <section id=section3>
+        <h3>Hvor skal du møde op?</h3>
+        <p> Heidis Bier Bar, Klostergade 34B, St, 8000 Aarhus</p>
+        <p> Se kortet nedenfor og planlæg din rute</p>
+        <!-- mapbox -->
+        <div id="map"></div>
+    </section>
+
+ </div>
+
+    <script src="js/js.js"></script>
+
+</body>
+
+</html>
